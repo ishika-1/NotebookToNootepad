@@ -1,0 +1,63 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NTN Result</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
+
+	<style type="text/css">
+		body {
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		p {
+			text-align: center;
+			font-size: 20px;
+		}
+		.lavender {
+			color: #543E69;
+		}
+	</style>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('{{ STATIC_URL }}/static/images/homepage.jpg'); background-size: cover;">
+			<div class="wrap-login100">
+				{%csrf_token%}
+				<span class="login100-form-title lavender" style="padding-bottom:75px;">
+					<h3>NOTEBOOK TO NOTEPAD<br> </h3>
+					<h3> </h3>
+				</span>
+
+				<div style="padding-bottom:75px">
+					<p>{{ans}}</p>
+				</div>
+				<div class="container-login100-form-btn">
+					<div class="wrap-login100-form-btn">
+						<div class="login100-form-bgbtn"></div>
+						<form method="POST" enctype="multipart/form-data" action = "/">
+							{% csrf_token %}
+							<button type="submit" class="login100-form-btn">Logout</button> 
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
